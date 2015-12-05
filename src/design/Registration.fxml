@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<Pane fx:id="pane" maxHeight="400" maxWidth="600" minHeight="400" minWidth="600" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerRegistration">
+	<children>
+		<MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="610.0">
+			<menus>
+				<Menu mnemonicParsing="false" text="File">
+					<items>
+						<MenuItem mnemonicParsing="false" text="Close" onAction="#close"/>
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Help">
+					<items>
+						<MenuItem mnemonicParsing="false" text="About" onAction="#aboutMe" />
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+		<TextField fx:id="userNameRegistration" layoutX="214.0" layoutY="134.0" promptText="Username" />
+		<PasswordField fx:id="password" layoutX="213.0" layoutY="188.0" promptText="Password" />
+		<PasswordField fx:id="rePassword" layoutX="214.0" layoutY="239.0" promptText="Re-Password" />
+		<Button layoutX="214.0" layoutY="303.0" mnemonicParsing="false" onAction="#registrationBtnClicked" text="Register">
+			<cursor>
+				<Cursor fx:constant="CROSSHAIR" />
+			</cursor>
+			<effect>
+				<DropShadow color="#00c78fd4" />
+			</effect>
+		</Button>
+
+		<Label layoutX="70.0" layoutY="138.0" text="User Name" />
+		<Label layoutX="70.0" layoutY="192.0" text="Password" />
+		<Label layoutX="70.0" layoutY="243.0" text="Re Password" />
+		<Label layoutX="144.0" layoutY="56.0" text="Register Yourself.. Its Free.!" textFill="#139a96">
+			<font>
+				<Font size="24.0" />
+			</font>
+		</Label>
+		<Label fx:id="errorUserName" layoutX="473.0" layoutY="138.0" text="Please Type Email">
+			<textFill>
+				<LinearGradient cycleMethod="REPEAT" endX="0.46190476190476193" endY="1.0" startX="0.4523809523809524">
+					<stops>
+						<Stop color="#97a142" />
+						<Stop color="#a19442" offset="1.0" />
+					</stops>
+				</LinearGradient>
+			</textFill>
+		</Label>
+		<Label fx:id="errorPassword" layoutX="473.0" layoutY="188.0" text="Atleast 6 Character">
+			<textFill>
+				<LinearGradient cycleMethod="REPEAT" endX="0.46190476190476193" endY="1.0" startX="0.4523809523809524">
+					<stops>
+						<Stop color="#97a142" />
+						<Stop color="#a15442" offset="1.0" />
+					</stops>
+				</LinearGradient>
+			</textFill>
+		</Label>
+		<Button fx:id="btnGoBack" cancelButton="true" layoutX="68.0" layoutY="300.0" mnemonicParsing="false" onAction="#goBack" prefHeight="25.0" prefWidth="77.0" rotate="21.8" text="Go Back">
+			<effect>
+				<Lighting>
+					<bumpInput>
+						<GaussianBlur />
+					</bumpInput>
+					<light>
+						<Light.Distant color="#fffbfb" />
+					</light>
+				</Lighting>
+			</effect>
+		</Button>
+      <ImageView fitHeight="17.0" fitWidth="16.0" layoutX="70.0"
+	layoutY="295.0" onMouseClicked="#goBack" pickOnBounds="true"
+	preserveRatio="true" >
+         <image>
+            <Image url="@../../left_grey.png" />
+         </image>
+      </ImageView>
+
+	</children>
+</Pane>

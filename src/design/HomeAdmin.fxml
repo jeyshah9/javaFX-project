@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.MenuItem?>
+
+<Pane maxHeight="400" maxWidth="600" minHeight="400" minWidth="600"
+	prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8"
+	xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerHomeAdmin">
+	<children>
+		<MenuBar prefHeight="25.0" prefWidth="610.0">
+			<menus>
+				<Menu mnemonicParsing="false" text="File">
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#signOff"
+							text="Sign Off" />
+					</items>
+					<items>
+
+						<MenuItem onAction="#saveIt" text="Save" />
+					</items>
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#closeSystem"
+							text="Close" />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Help">
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#aboutMe"
+							text="About" />
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+		<Label fx:id="headerLabelAdmin" layoutX="233.0" layoutY="35.0"
+			text="Hello Admin" textFill="#738608">
+			<font>
+				<Font size="24.0" />
+			</font>
+		</Label>
+		<TabPane layoutY="71.0" prefHeight="324.0" prefWidth="600.0"
+			tabClosingPolicy="UNAVAILABLE">
+			<tabs>
+				<Tab text="Chapters Editor">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+							prefWidth="200.0">
+							<children>
+								<Label layoutX="14.0" layoutY="21.0" text="Select Chapter " />
+								<ComboBox layoutX="138.0" layoutY="17.0" prefWidth="453.0"
+									fx:id="choiceList" onAction="#changeChoiceBox" />
+								<TextField layoutX="138.0" layoutY="51.0" prefHeight="25.0"
+									prefWidth="453.0" promptText="Chapter Name" fx:id="editText" />
+								<TextArea layoutX="139.0" layoutY="82.0" prefHeight="174.0"
+									prefWidth="453.0" promptText="Type Description" fx:id="editDescription" />
+								<Label layoutX="14.0" layoutY="55.0" text="Chapter Name" />
+								<Label layoutX="14.0" layoutY="82.0" text="Chapter Description" />
+								<Button layoutX="526.0" layoutY="257.0" mnemonicParsing="false"
+									prefHeight="25.0" prefWidth="62.0" text="Save" onAction="#updateIt" />
+							</children>
+						</AnchorPane>
+					</content>
+				</Tab>
+				<Tab text="Add Chapters">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+							prefWidth="200.0">
+							<children>
+								<TextField layoutX="138.0" layoutY="51.0" prefHeight="25.0"
+									prefWidth="453.0" promptText="Chapter Name" fx:id="addName" />
+								<TextArea layoutX="139.0" layoutY="82.0" prefHeight="174.0"
+									prefWidth="453.0" promptText="Type Description" fx:id="addDescription" />
+								<Label layoutX="14.0" layoutY="55.0" text="Chapter Name"
+									textFill="#0550ff" />
+								<Label layoutX="14.0" layoutY="82.0" text="Chapter Description"
+									textFill="#728e9a" />
+								<Button layoutX="526.0" layoutY="257.0" mnemonicParsing="false"
+									prefHeight="25.0" prefWidth="62.0" text="Save" onAction="#saveIt" />
+								<Label layoutX="14.0" layoutY="9.0" text="Add New Chapter"
+									textFill="#097edd">
+									<font>
+										<Font name="System Italic" size="19.0" />
+									</font>
+								</Label>
+							</children>
+						</AnchorPane>
+					</content>
+				</Tab>
+				<Tab text="User List">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+							prefWidth="200.0">
+							<children>
+								<TableView layoutY="27.0" prefHeight="262.0"
+									prefWidth="600.0" fx:id="tbl">
+									<columns>
+										<TableColumn prefWidth="57.0" text="Number" fx:id="tblNumber" />
+										<TableColumn prefWidth="145.0" text="User Name" fx:id="tblName" />
+										<TableColumn prefWidth="122.0" text="Password" fx:id="tblPassword" />
+										<TableColumn prefWidth="141.0" text="Last Login" fx:id="tblDate" />
+										<TableColumn prefWidth="134.0" text="Registered date" fx:id="tblReg" />  
+									</columns>
+								</TableView>
+							</children>
+						</AnchorPane>
+					</content>
+				</Tab>
+			</tabs>
+		</TabPane>
+	</children>
+</Pane>
