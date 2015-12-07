@@ -54,7 +54,7 @@ public class ControllerHomeAdmin implements Initializable {
 	 //Get all of the products
     public ObservableList<StudentData> getProduct(){
         ObservableList<StudentData> products = FXCollections.observableArrayList();
-        for(int i =1; i<Model.getUserCount() ;i++){
+        for(int i =1; i<=Model.getUserCount() ;i++){
         	
         	products.add(new StudentData(i));	
         	
